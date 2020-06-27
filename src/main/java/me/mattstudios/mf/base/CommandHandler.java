@@ -379,6 +379,9 @@ public final class CommandHandler extends Command {
         String id = subCommand.getCompletions().get(args.length - 1);
 
         List<String> completionList = new ArrayList<>();
+        if (subCommand.getParams().size() < args.length - 1) {
+            return Collections.emptyList();
+        }
         Object inputClss = subCommand.getParams().get(args.length - 2);
 
         // TODO range without thingy and also for double
